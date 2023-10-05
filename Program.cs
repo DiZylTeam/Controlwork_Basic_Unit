@@ -6,9 +6,9 @@
 }
 
 
-string[] GetArray(string massage)  // метод для получения строкового массива
+string[] GetArray(string massage)
 {
-    string[] array = new string[1];  // объявляем новый массив
+    string[] array = new string[1];
 
     for (int i = 0; i < array.Length; i++)
     {
@@ -18,7 +18,7 @@ string[] GetArray(string massage)  // метод для получения ст�
 }
 
 
-string Text(string[] arr) {     // метод для преобразования массива в строковый текст
+string Text(string[] arr) {
     string text = "";  
     for (int i = 0; i < arr.Length; i++) {
             text = "";
@@ -46,13 +46,13 @@ string[] ResArray(string text)
 }
 
 
-void PrintArray(string[] array)    // метод для вывода массива на экран
+void PrintArray(string[] array)
 {
     for (int i = 0; i < array.Length - 1; i++)
     {
         Console.Write($"{array[i]} ");
     }
-    Console.Write($"{array[array.Length - 1]}");    // вывод массива
+    Console.Write($"{array[array.Length - 1]}");
 }
 
 
