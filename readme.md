@@ -1,13 +1,13 @@
 # Задача
 
-Написать программу, которая из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам.   
+*Написать программу, которая из имеющегося массива строк формирует новый массив из строк, длина которых меньше, либо равна 3 символам.   
 Первоначальный массив можно ввести с клавиатуры, либо задать на старте выполнения алгоритма.   
-При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
+При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.*
 
-Примеры:
+*Примеры:  
 [“Hello”, “2”, “world”, “:-)”] → [“2”, “:-)”]  
 [“1234”, “1567”, “-2”, “computer science”] → [“-2”]  
-[“Russia”, “Denmark”, “Kazan”] → []
+[“Russia”, “Denmark”, “Kazan”] → []*
 
 
 # Описание решения задачи
@@ -64,43 +64,43 @@
 Если условие выполняется - помещаем данное значение в массив *finalArr*.
 
 ```
-                    string[] ResArray(string text)
-                    {
-                        string[] array_2 = text.Split(' ');
-                        string[] finalArr = new string[array_2.Length];
-                        int j = 0;
-                        for (int i = 0; i < array_2.Length; i++)
-                        {  
-                            string word = array_2[i];
-                            if (word.Length <= 3)
-                            {
-                                finalArr[j] = word;
-                                j++;
-                            }   
-                        }
-                        return finalArr;
+                string[] ResArray(string text)
+                {
+                    string[] array_2 = text.Split(' ');
+                    string[] finalArr = new string[array_2.Length];
+                    int j = 0;
+                    for (int i = 0; i < array_2.Length; i++)
+                    {  
+                        string word = array_2[i];
+                        if (word.Length <= 3)
+                        {
+                            finalArr[j] = word;
+                            j++;
+                        }   
                     }
+                    return finalArr;
+                }
 ```
 
 5. Создаем void метод **PrintArray** для вывода получаемых данных на консоль (печать).
 
 ```
-                    void PrintArray(string[] array)
+                void PrintArray(string[] array)
+                {
+                    for (int i = 0; i < array.Length - 1; i++)
                     {
-                        for (int i = 0; i < array.Length - 1; i++)
-                        {
-                            Console.Write($"{array[i]} ");
-                        }
-                        Console.Write($"{array[array.Length - 1]}");
+                        Console.Write($"{array[i]} ");
                     }
+                    Console.Write($"{array[array.Length - 1]}");
+                }
 ```
 
 6. Обращаемся к вышесозданным методам для их исполнения и выводим полученный результат на консоль (печать).
 
 ```
-                  string input = PromptString("Enter a text (words, numbers, symbols): ");
-                  string[] inputArray = GetArray(input);
-                  string text = Text(inputArray);
-                  string[] resArray = ResArray(text);
-                  PrintArray(resArray);
+                string input = PromptString("Enter a text (words, numbers, symbols): ");
+                string[] inputArray = GetArray(input);
+                string text = Text(inputArray);
+                string[] resArray = ResArray(text);
+                PrintArray(resArray);
 ```
